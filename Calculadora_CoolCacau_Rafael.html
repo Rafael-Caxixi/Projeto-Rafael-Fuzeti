@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="margin-left: 35%;"> 
+    
+    <div style="color: #0ea2c0; font-size: xxx-large;"><span style="color: black;">Calculadora</span> Cool <span style="color: #D2691E;"> Cacau</span></div>
+
+    </div>
+
+    <div style="margin-left: 43%;">
+<span style="font-size: x-large;">Faça seu orçamento aqui:</span><br>
+
+    
+
+    
+Preencha os campos abaixo:
+<br>
+<br>
+Quantidade da colheita total em <b>Kg</b>:
+<br>
+<input id="colheita" type="number">
+<br>
+<br>
+Quantidade em perda em <b>Kg</b>:
+<br>
+<input id="perda" type="number">
+<br>
+<br>
+Valor de venda por <b>Kg</b>:
+<br>
+<input id="venda" type="number">
+<br>
+<br>
+<button onclick="botao()">Calcule seu lucro</button>
+<div id="frase"></div>
+<button onclick="recomeço()">Altere seus valores</button>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function botao() {
+
+        var colheita_total = Number(colheita.value)
+        var perda_total = Number(perda.value)
+        var venda_kg = Number(venda.value)
+
+        var lucro_kg= Number(colheita_total) - Number(perda_total)
+        var lucro_total = Number(lucro_kg) * Number(venda_kg)
+
+        frase.innerHTML = `<span style="font-size:30px"> Seu lucro em <b>kg</b> foi de ${lucro_kg}kg.<br>
+        Seu lucro em <b>R$</b> foi de R$${lucro_total}.</span><br>
+    
+        `
+    }
+        function recomeço(){
+        frase.innerHTML = ""
+        colheita.value = ""
+        perda.value = ""
+        venda.value = ""
+        
+        
+        }
+    
+
+</script>
+
+
